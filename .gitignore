@@ -1,0 +1,120 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# VS Code
+.vscode/
+
+# VS Code settings
+*.code-workspace
+
+# PyCharm
+.idea/
+
+# Spyder
+.spyderproject
+.spyproject
+
+# Rope
+.ropeproject
+
+# Django
+*.log
+local_settings.py
+db.sqlite3
+
+# Flask
+instance/
+*.db
+*.sqlite3
+
+# Scrapy
+.scrapy
+
+# Sphinx
+doc/build
+
+# Pytest
+.pytest_cache/
+
+# MyPy
+.mypy_cache/
+
+# Leiningen
+project.clj
+target/
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+Makefile
+Makefile.in
+cmake-build-*/
+
+# R
+.R
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# Excel
+*.xlsx
+*.xls
