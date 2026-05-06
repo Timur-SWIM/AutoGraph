@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "autograph-service"
+version = "0.1.0"
+description = "Tkinter GUI for importing TXT and S2P measurement data into Excel templates"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "openpyxl>=3.1.0",
+]
+
+[project.scripts]
+autograph = "autograph_service.main:main"
+
+[tool.setuptools]
+packages = ["autograph_service"]

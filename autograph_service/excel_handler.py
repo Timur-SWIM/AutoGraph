@@ -168,6 +168,10 @@ class ExcelHandler:
                 ws.cell(row=target_row, column=20, value=self._convert_value(row_data[6]))  # T - Efficiency %
                 ws.cell(row=target_row, column=21, value=self._convert_value(row_data[7]))  # U - Pout W
             rows_written += 1
+
+        first_empty_row = start_row + rows_written
+        if first_empty_row <= ws.max_row:
+            self._clear_columns_range(ws, first_empty_row, ws.max_row, range(16, 22))
         
         return rows_written
 
@@ -281,6 +285,11 @@ class ExcelHandler:
                     cell_value = self._convert_value(value)
                     ws.cell(row=target_row, column=tgt_col + 1, value=cell_value)
             rows_written += 1
+
+        first_empty_row = start_data_row + rows_written
+        if first_empty_row <= ws.max_row:
+            target_columns = sorted({tgt_col + 1 for tgt_col in column_mapping.values()})
+            self._clear_columns_range(ws, first_empty_row, ws.max_row, target_columns)
         
         return rows_written
     
@@ -741,6 +750,12 @@ class ExcelHandler:
         except (ValueError, TypeError):
             return value
     
+    def _clear_columns_range(self, worksheet, start_row: int, end_row: int, columns) -> None:
+        """Очищает заданные колонки в диапазоне строк, не затрагивая оформление листа."""
+        for row_idx in range(start_row, end_row + 1):
+            for col_idx in columns:
+                worksheet.cell(row=row_idx, column=col_idx).value = None
+
     def write_s2p_data_to_template_sheet(
         self,
         sheet_name: str,

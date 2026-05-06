@@ -69,9 +69,10 @@ class S2PExcelHandler:
         # Создаем новый лист
         new_ws = self.workbook.create_sheet(title=safe_sheet_name)
         
-        # Копируем все ячейки вручную
-        max_row = 501
-        max_col = 21
+        # Копируем фактически используемую область листа.
+        # Это нужно и для обычного листа-шаблона, и для отдельных листов графиков.
+        max_row = max(source_ws.max_row or 1, 1)
+        max_col = max(source_ws.max_column or 1, 1)
         
         for row_idx in range(1, max_row + 1):
             for col_idx in range(1, max_col + 1):
